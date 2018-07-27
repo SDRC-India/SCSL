@@ -1,0 +1,439 @@
+[
+	[
+		{
+			"key": "CL",
+			"date": "2000",
+			"value": 44.4,
+			"andhraValue": 45.4,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Neonatal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2001",
+			"value": 40.4,
+			"andhraValue": 40.2,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Neonatal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2002",
+			"value": 39.6,
+			"andhraValue": 41.2,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Neonatal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2003",
+			"value": 37.1,
+			"andhraValue": 35.5,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Neonatal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2004",
+			"value": 37.4,
+			"andhraValue": 35.6,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Neonatal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2005",
+			"value": 36.7,
+			"andhraValue": 34.8,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Neonatal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2006",
+			"value": 37.0,
+			"andhraValue": 33.3,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Neonatal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2007",
+			"value": 36.3,
+			"andhraValue": 32.6,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Neonatal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2008",
+			"value": 35.1,
+			"andhraValue": 33.7,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Neonatal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2009",
+			"value": 34.2,
+			"andhraValue": 32.8,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Neonatal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2010",
+			"value": 32.6,
+			"andhraValue": 29.9,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Neonatal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2011",
+			"value": 30.6,
+			"andhraValue": 27.9,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Neonatal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2012",
+			"value": 28.9,
+			"andhraValue": 27.0,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Neonatal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2013",
+			"value": 28.0,
+			"andhraValue": 25.0,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Neonatal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2014",
+			"value": 26.0,
+			"andhraValue": 26.0,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Neonatal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2015",
+			"value": 25.0,
+			"andhraValue": 24.0,
+			"telanganaValue": 14.0,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Neonatal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2016",
+			"value": 24.0,
+			"andhraValue": 23.0,
+			"telanganaValue": 21.0,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Neonatal Mortality"
+		}
+	],
+	[
+		{
+			"key": "CL",
+			"date": "1992",
+			"value": 79,
+			"andhraValue": 71,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},{
+			"key": "CL",
+			"date": "1993",
+			"value": 74,
+			"andhraValue": 64,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},{
+			"key": "CL",
+			"date": "1994",
+			"value": 74,
+			"andhraValue": 65,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},{
+			"key": "CL",
+			"date": "1995",
+			"value": 74,
+			"andhraValue": 67,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},{
+			"key": "CL",
+			"date": "1996",
+			"value": 72,
+			"andhraValue": 65,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},{
+			"key": "CL",
+			"date": "1997",
+			"value": 71,
+			"andhraValue": 63,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},{
+			"key": "CL",
+			"date": "1998",
+			"value": 72,
+			"andhraValue": 66,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},{
+			"key": "CL",
+			"date": "1999",
+			"value": 70,
+			"andhraValue": 66,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},{
+			"key": "CL",
+			"date": "2000",
+			"value": 68,
+			"andhraValue": 65,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},{
+			"key": "CL",
+			"date": "2001",
+			"value": 66,
+			"andhraValue": 66,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},{
+			"key": "CL",
+			"date": "2002",
+			"value": 63,
+			"andhraValue": 62,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2003",
+			"value": 60,
+			"andhraValue": 59,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2004",
+			"value": 58,
+			"andhraValue": 59,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2005",
+			"value": 58,
+			"andhraValue": 57,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2006",
+			"value": 57,
+			"andhraValue": 56,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2007",
+			"value": 55,
+			"andhraValue": 54,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2008",
+			"value": 53,
+			"andhraValue": 52,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2009",
+			"value": 50,
+			"andhraValue": 49,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2010",
+			"value": 47,
+			"andhraValue": 46,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2011",
+			"value": 44,
+			"andhraValue": 43,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2012",
+			"value": 42,
+			"andhraValue": 41,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2013",
+			"value": 40,
+			"andhraValue": 39,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2014",
+			"value": 39,
+			"andhraValue": 39,
+			"telanganaValue": 35,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2015",
+			"value": 37,
+			"andhraValue": 37,
+			"telanganaValue": 34,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2016",
+			"value": 34,
+			"andhraValue": 34,
+			"telanganaValue": 31,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Infant Mortality"
+		}
+	],
+	[
+		{
+			"key": "CL",
+			"date": "1997-1998",
+			"value": 398,
+			"andhraValue": 197,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Maternal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "1999-2001",
+			"value": 327,
+			"andhraValue": 220,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Maternal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2001-2003",
+			"value": 301,
+			"andhraValue": 195,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Maternal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2004-2006",
+			"value": 254,
+			"andhraValue": 154,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Maternal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2007-2009",
+			"value": 212,
+			"andhraValue": 134,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Maternal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2010-2012",
+			"value": 178,
+			"andhraValue": 110,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Maternal Mortality"
+		},
+		{
+			"key": "CL",
+			"date": "2011-2013",
+			"value": 167,
+			"andhraValue": 92,
+			"telanganaValue": null,
+			"source": "Sample Registration System, RGI, Government of India",
+			"name": "Maternal Mortality"
+		}
+	]
+]

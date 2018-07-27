@@ -1,0 +1,298 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	 http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+	<context:property-placeholder location="classpath:spring/app.properties"
+		system-properties-mode="OVERRIDE" />
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<mvc:annotation-driven />
+	<!-- enables scanning for @Transactional annotations -->
+	<tx:annotation-driven />
+	<task:annotation-driven/>
+	<context:component-scan base-package="org.sdrc.scsl.service" />
+	<context:component-scan base-package="org.sdrc.scsl.web.controller" />
+	<context:component-scan base-package="org.sdrc.scsl.util" />
+	<context:component-scan base-package="org.sdrc.scsl.repository" />
+
+	<!-- ===========MONTHLY Timeperiod job start================ July 1, August 
+		1, September 1.. 12:00 AM -->
+	<bean id="sncuService" class="org.sdrc.scsl.service.SNCUServiceImpl" />
+
+	<bean name="monthlyJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="org.sdrc.scsl.job.MonthlyTimeperiodJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="sncuService" value-ref="sncuService" />
+			</map>
+		</property>
+	</bean>
+	<!-- Time period creation monthly -->
+	<bean id="timeperiodMonthlyCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="monthlyJob" />
+		<property name="cronExpression" value="0 0 0 1 1/1 ? *" />
+	</bean>
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="applicationContextSchedulerContextKey" value="applicationContext" />
+		<property name="jobDetails">
+			<list>
+				<ref bean="monthlyJob" />
+			</list>
+		</property>
+		<property name="triggers">
+			<list>
+				<ref bean="timeperiodMonthlyCronTrigger" />
+			</list>
+		</property>
+	</bean>
+	<!-- ===========MONTHLY Timeperiod job end============ -->
+
+	<!-- ===========auto approve superintendent job start July 21, August 21, 
+		September 21.. 12:01 AM ================ -->
+	<bean id="submissionManagementService" class="org.sdrc.scsl.service.SubmissionManagementServiceImpl" />
+
+	<bean name="autoApproveJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="org.sdrc.scsl.job.SupritendentAutoApproveMonthlyJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="submissionManagementService" value-ref="submissionManagementService" />
+			</map>
+		</property>
+	</bean>
+	<bean id="autoApproveCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="autoApproveJob" />
+		<property name="cronExpression" value="0 1 0 21 1/1 ? *" />
+	</bean>
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="applicationContextSchedulerContextKey" value="applicationContext" />
+		<property name="jobDetails">
+			<list>
+				<ref bean="autoApproveJob" />
+			</list>
+		</property>
+		<property name="triggers">
+			<list>
+				<ref bean="autoApproveCronTrigger" />
+			</list>
+		</property>
+	</bean>
+	<!-- ===========auto approve superintendent job end============ -->
+
+	<!-- =========== engagementScore email send job start July 21, August 21, 
+		September 21.. 12:30 AM=========== -->
+
+	<bean id="engagementScoreService" class="org.sdrc.scsl.service.EngagementScoreServiceImpl" />
+	<bean name="engagementScorePendingMail" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="org.sdrc.scsl.job.EngagementScorePendingMailMonthlyJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="engagementScoreService" value-ref="engagementScoreService" />
+			</map>
+		</property>
+	</bean>
+	<bean id="engagementScorePendingMailCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="engagementScorePendingMail" />
+		<property name="cronExpression" value="0 30 0 21 1/1 ? *" />
+	</bean>
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="applicationContextSchedulerContextKey" value="applicationContext" />
+		<property name="jobDetails">
+			<list>
+				<ref bean="engagementScorePendingMail" />
+			</list>
+		</property>
+		<property name="triggers">
+			<list>
+				<ref bean="engagementScorePendingMailCronTrigger" />
+			</list>
+		</property>
+	</bean>
+	<!-- ===========engagementScore email send job end============ -->
+
+	<!-- ===========MONTHLY update indicator facility timeperiod mapping job 
+		end============ -->
+
+	<!-- ===========MONTHLY aggregate sncu data job start, July 1, August 1, 
+		September 1..01:30 AM ============ -->
+
+	<bean id="aggregationService" class="org.sdrc.scsl.service.AggregationServiceImpl" />
+
+	<bean name="monthlyAggregateSncuDataJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="org.sdrc.scsl.job.MonthlyAggregateJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="aggregationService" value-ref="aggregationService" />
+			</map>
+		</property>
+	</bean>
+	<bean id="monthlyAggregateSncuDataCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="monthlyAggregateSncuDataJob" />
+		<property name="cronExpression" value="0 30 1 1 1/1 ? *" />
+	</bean>
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="applicationContextSchedulerContextKey" value="applicationContext" />
+		<property name="jobDetails">
+			<list>
+				<ref bean="monthlyAggregateSncuDataJob" />
+			</list>
+		</property>
+		<property name="triggers">
+			<list>
+				<ref bean="monthlyAggregateSncuDataCronTrigger" />
+			</list>
+		</property>
+	</bean>
+	<!-- ===========MONTHLY aggregate sncu data job end============ -->
+
+	<!-- ===========Quarterly aggregate sncu data job start December 1, 2017 2:30 AM
+	March 1, 2018 2:30 AM============ -->
+	<!-- // change as and when required -->
+	<bean name="quarterlyAggregateSncuDataJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="org.sdrc.scsl.job.QuarterlyAggregateJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="aggregationService" value-ref="aggregationService" />
+			</map>
+		</property>
+	</bean>
+	<bean id="quarterlyAggregateSncuDataCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="quarterlyAggregateSncuDataJob" />
+		<property name="cronExpression" value="0 30 2 1 3/3 ? *" />
+	</bean>
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="applicationContextSchedulerContextKey" value="applicationContext" />
+		<property name="jobDetails">
+			<list>
+				<ref bean="quarterlyAggregateSncuDataJob" />
+			</list>
+		</property>
+		<property name="triggers">
+			<list>
+				<ref bean="quarterlyAggregateSncuDataCronTrigger" />
+			</list>
+		</property>
+	</bean>
+	<!-- ===========Quarterly aggregate sncu data job end============ -->
+
+	<!-- ===========Yearly aggregate sncu data job start August 1, 2018, August 
+		1, 2019 ..02:30 AM ============ -->
+	<!-- // change as and when required -->
+	<bean name="yearlyAggregateSncuDataJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="org.sdrc.scsl.job.YearlyAggregateJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="aggregationService" value-ref="aggregationService" />
+			</map>
+		</property>
+	</bean>
+	<bean id="yearlyAggregateSncuDataCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="yearlyAggregateSncuDataJob" />
+		<property name="cronExpression" value="0 30 3 1 8/12 ? *" />
+	</bean>
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="applicationContextSchedulerContextKey" value="applicationContext" />
+		<property name="jobDetails">
+			<list>
+				<ref bean="yearlyAggregateSncuDataJob" />
+			</list>
+		</property>
+		<property name="triggers">
+			<list>
+				<ref bean="yearlyAggregateSncuDataCronTrigger" />
+			</list>
+		</property>
+	</bean>
+	<!-- ===========Yearly aggregate sncu data job end============ -->
+
+	<!-- Declaring MessageSource -->
+	<bean id="applicationMessageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource"
+		p:basename="spring/app" />
+	<bean id="errorMessageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource"
+		p:basename="messages/errormessages" />
+	<bean id="messages"
+		class="org.springframework.context.support.ResourceBundleMessageSource"
+		p:basename="messages/messages" />
+	<bean id="notification"
+		class="org.springframework.context.support.ResourceBundleMessageSource"
+		p:basename="messages/notification" />
+	<bean id="dashboardmessages"
+		class="org.springframework.context.support.ResourceBundleMessageSource"
+		p:basename="messages/dashboardmessages" />
+	<bean id="areashortnames"
+		class="org.springframework.context.support.ResourceBundleMessageSource"
+		p:basename="messages/areashortnames" />
+	<bean
+		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+	<jpa:repositories base-package="org.sdrc.scsl.repository.springdatajpa"
+		entity-manager-factory-ref="entityManagerFactory"
+		transaction-manager-ref="transactionManager" />
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+		p:dataSource-ref="dataSource">
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"
+				p:showSql="${jpa.showSql}" />
+		</property>
+		<property name="jpaPropertyMap">
+			<map>
+				<entry key="hibernate.dialect" value="${hibernate.dialect}" />
+				<entry key="hibernate.hbm2ddl.auto" value="${hibernate.hbm2ddl.auto}" />
+				<entry key="hibernate.show_sql" value="${hibernate.show_sql}" />
+			</map>
+		</property>
+		<property name="packagesToScan">
+			<list>
+				<value>org.sdrc.scsl.domain</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
+		p:entityManagerFactory-ref="entityManagerFactory" />
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<!-- <property name="url" value="${jdbc.url};databaseName=${jdbc.databaseName}" 
+			/> -->
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+	<bean id="passwordEncoder"
+		class="org.springframework.security.authentication.encoding.MessageDigestPasswordEncoder">
+		<constructor-arg value="MD5" />
+	</bean>
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/resources/**" />
+			<bean class="org.sdrc.scsl.core.AuthorizeInterceptor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="org.sdrc.scsl.core.AuthorizeInterceptor" />
+		</mvc:interceptor>
+		<bean id="webContentInterceptor"
+			class="org.springframework.web.servlet.mvc.WebContentInterceptor">
+			<property name="cacheSeconds" value="0" />
+		</bean>
+	</mvc:interceptors>
+	
+</beans>
