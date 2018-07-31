@@ -1,0 +1,34 @@
+# Properties file with JDBC and JPA settings.
+jpa.showSql=false
+
+jdbc.driverClassName=org.postgresql.Driver
+#jdbc.url=jdbc:postgresql://192.168.1.36:5432/scsl_r2
+jdbc.url=jdbc:postgresql://192.168.1.36:5432/scsl_test_01062017
+jdbc.databaseName=scsl_test_01062017
+#jdbc.databaseName=17052017
+jdbc.username=postgres
+jdbc.password=admin
+
+# Property that determines which Hibernate dialect to use
+# (only applied with "applicationContext-hibernate.xml")
+hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+hibernate.hbm2ddl.auto=update
+hibernate.show_sql=true
+
+# Property that determines which database to use with an AbstractJpaVendorAdapter
+jpa.database=POSTGRESQL
+
+#File Path of Saving Document of PDSA
+filepath.pdsa=C://SCSL
+
+filepath.pdsa.folder=//PDSA//
+
+filepath.planning.folder=//Planning//
+
+pdsa.firstDoc.folder=//First Document
+pdsa.lastDoc.folder=//Last Document
+pdsa.otherDoc.folder=//Other Document
+
+filepath.planning.trip.folder=//trip
+
+filepath.planning.agenda.folder=//agenda

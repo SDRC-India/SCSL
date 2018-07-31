@@ -1,0 +1,10 @@
+#@author: Sarita Panigrahi, created on : 21-09-2017
+#This properties file will hold all the dynamic key indicators displayed in dashboard home landing page
+#<key>=<indicatorId>
+#profile entry inds
+number.of.live.births=43
+numberof.neonates.admitted=36
+number.of.births.static.andhraValue=851499
+number.of.births.static.telanganaValue=612489
+numberof.neonates.admitted.static.andhraValue=39472
+numberof.neonates.admitted.static.telanganaValue=29689

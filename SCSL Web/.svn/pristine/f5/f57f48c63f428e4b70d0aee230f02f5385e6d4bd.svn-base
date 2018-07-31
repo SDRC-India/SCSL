@@ -1,0 +1,188 @@
+invalid.credentials=Invalid username or password
+invalid.user.area.mapping=Invalid user area mapping, please contact admin.
+invalid.user.role.mapping=Invalid user role mapping, please contact admin.
+deo.role.code=1001
+ahi.associate.role.code=1005
+invalid.user.type.login=Only QI Team Member and AHI Associate can use mobile data entry module, please contact admin. 
+invalid.data=Invalid data, please contact admin.
+submission.deadline.date=15
+rejection.submission.deadline.date.by.sup=20
+rejection.submission.deadline.date.by.mne=25
+invalid.month.data=Invalid month data
+data.present.for.time_period=Data already present for given time period
+iftm.present=Already present for this time period
+
+pdsa.submission.succed=PDSA Added successfully
+
+
+pdsa.submission.failure=PDSA submission failed
+invalid.credentials=Invalid username or password
+
+not.closed.status.id=6,7
+
+close.status.id=8,9,10
+
+frequency.monthly=3
+frequency.daily=1
+frequency.weekly=2
+frequency.bi.weekly=4
+frequency.type.id=1
+
+indicator.type.process=14
+indicator.type.intermediate.id=17
+indicator.type.outcome.id=18
+
+type.status=2
+
+pending.status=7
+
+ongoing.status=6
+
+adapt.status=8
+
+adopt.status=9
+
+abandon.status=10
+
+
+ongoing.status.css=yellow
+pending.status.css=red
+adapt.status.css=blue
+adopt.status.css=pitch
+abandon.status.css=green
+
+
+submission.pending.status=19
+submission.rejected.status=20
+submission.approved.status=21
+submission.auto.approved.status=22
+submission.legacy.status=51
+
+submissionApproved.css=submissionApproved
+submissionRejected.css=submissionRejected
+submissionPending.css=submissionPending
+
+submission.created.auto=System
+
+timeperiod.monthly.periodicity=1
+timeperiod.quarter.periodicity=3
+timeperiod.year.periodicity=12
+
+
+date.lastdate = 26
+
+date.lastdate.sup=20
+
+date.after = 16
+
+
+status.approved.MnE=Approved by M&E
+status.approved.supritendent=Approved by superintendent
+status.rejected.supritendent=Rejected by superintendent
+status.rejected.MnE=Rejected by M&E
+status.auto.approved.superitendent=Auto approved by system
+status.legacy.mne=Legacy data uploaded by M&E
+
+status.pending=Data submitted
+
+#aggregation area types
+facility.level=facility
+district.level=district
+state.level=state
+country.level=country
+
+#india area id
+india.area.id=1
+file.extension=.xlsx
+
+record.type=Rejected
+
+facility.type.id=23,24
+
+last.date.submission.crossed.message=The due date for data submission has already expired
+
+superintendent.approval.lastdate = 21
+mne.approval.lastdate = 26
+
+pending.status.type.name=Pending
+superintendent.role.name=Superintendent
+mne.role.name=MnE
+
+indicator.type.intermediate=Intermediate
+
+#//area level id
+facility.level.id=4
+district.level.id=3
+state.level.id=2
+country.level.id=1
+
+
+#role Ids
+ahi.associate.role.id=5
+ahi.project.manager=15
+ahi.mne.lead.id=3
+ahi.operation.lead.role.id=18
+
+#//historical file path
+historical.file.path.excel=D:/SCSL_Legacy_
+historical.file.extension=.xls
+historical.lr.file.read.path=resources/excelTemplate/M2_Labourroom_Phase_II_210518.xls
+historical.nolr.file.read.path=resources/excelTemplate/M1_NoLabourroom_Phase_II_210518.xls
+
+raw.data.xls.template=resources/excelTemplate/Raw_Data2.xlsx
+aggregate.data.xls.template=resources/excelTemplate/Aggregate_Data1.xlsx
+planning.report.xls.template=resources/excelTemplate/Planning_Report.xlsx
+
+total.typedetail.id=72
+public.typedetail.id=23
+private.typedetail.id=24
+small.private.typedetail.id=25
+large.private.typedetail.id=26
+small.public.typedetail.id=27
+large.public.typedetail.id=28
+
+indicator.type.process.name=Process
+
+#txnSNCUDATA description message type detail id
+warning.description.message.first=55
+warning.description.message.second=56
+warning.description.message.third=57
+
+#//not used yet
+#no Of Delivery Indicator ids
+noOfDeliveryIndicators=2,3,7,25,39
+#no Of LiveBirth Indicator ids
+noOfLiveBirthIndicators=23,24,43
+#2016-jan, 2016-dec 
+january.2016.timeperiod.id=17
+december.2016.timeperiod.id=28
+
+#prod and uat template version
+#update this version if there is any change in configuration of indicator / legacy data template
+#uat version -- uncomment in uat--update version if indicator changes
+#historical.template.version=scsl_uat_v_2.0.0
+#prod version
+historical.template.version=scsl_prod_v_2.0.0
+#local version
+#historical.template.version=scsl_test_v_2.0.0
+historical.template.invalid.error.message=The file uploaded has been downloaded for a different version. Please download the current version from the application and try again.
+historical.file.uploaded.path=D://SCSL/Historical data files/
+historical.template.disable.content.error.message=Please enable content/macro before filling the data
+date.month.year.formatter=dd-MM-YYYY
+date.month.year.simpledate.formatter=dd-MM-yyyy
+date.month.year.formatter.no.hyphen=dd MMM YYYY
+date.month.year.formatter.no.hyphen2=dd MMM YYY
+month.year.formatter.no.hyphen=MMM YYYY
+month.small.year.formatter.no.hyphen=MMM yyyy
+year.month.date.formatter.hyphen=yyyy-MM-dd
+year.month.date.time.formatter.no.hyphen=yyyyMMddHHmmssS
+year.month.date.time.formatter.hyphen=yyyy-MM-dd HH:mm:ss:mss
+engagement.score.starting.timeperiod.id=27
+scsl.program.name=Safe Care, Saving Lives
+#Subhadarshani -- mobile const----version check while synching
+syscofig.return.zero.object.error=3
+syscofig.return.zero.object.error.message=server error: no record in sysconfiguration table
+api.version.mismatch.error.code=4
+api.version.mismatch.error.message=A newer version of app is available. Please update the app to continue..
+api.version.missing.sysconfig.error.code=5
+api.version.missing.sysconfig.error.message=server error:No App version found.

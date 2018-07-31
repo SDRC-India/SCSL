@@ -1,0 +1,11 @@
+org.sdrc.scsl.core
+org.sdrc.scsl.domain
+org.sdrc.scsl.exception
+org.sdrc.scsl.job
+org.sdrc.scsl.model.mobile
+org.sdrc.scsl.model.web
+org.sdrc.scsl.repository
+org.sdrc.scsl.repository.springdatajpa
+org.sdrc.scsl.service
+org.sdrc.scsl.util
+org.sdrc.scsl.web.controller

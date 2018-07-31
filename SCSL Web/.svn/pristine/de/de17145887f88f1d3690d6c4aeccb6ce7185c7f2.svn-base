@@ -1,0 +1,42 @@
+[{
+		"name": "Population",
+		"andhraValue": 49386799,
+		"telanganaValue": 35193978,
+		"source": "Census 2011",
+		"telanganaSource": "Census 2011",
+		"andhraSource": "Census 2011",
+		"unit": "Number"
+	}, {
+		"name": "Number of birth",
+		"andhraValue": 851499,
+		"telanganaValue": 612489,
+		"source": "Civil Registration System 2015",
+		"telanganaSource": "Civil Registration System 2015",
+		"andhraSource": "Civil Registration System 2015",
+		"unit": "Number"
+	}, {
+		"name": "Number of neonates admitted in the SNCUs (public)",
+		"andhraValue": 39472,
+		"telanganaValue": 29689,
+		"source": "National child Health review, GoI 2016",
+		"telanganaSource": "National child Health review, GoI 2016",
+		"andhraSource": "National child Health review, GoI 2016",
+		"unit": "Number"
+	}, {
+		"name": "Number of public Special New Born Care Unit",
+		"andhraValue": 26,
+		"telanganaValue": 22,
+		"source": "",
+		"andhraSource": "National child Health review, GoI 2016",
+		"telanganaSource": "Directorate of Medical Education, Government of Telangana",
+		"unit": "Number"
+	}, {
+		"name": "Number of public delivery points",
+		"andhraValue": 209,
+		"telanganaValue": 258,
+		"source": "",
+		"telanganaSource": "NHM-Telangana, 2017-18",
+		"andhraSource": "NHM-AP, 2017-18",
+		"unit": "Number"
+	}
+]
